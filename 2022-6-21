@@ -1,0 +1,62 @@
+2.13 conditinoals 조건문
+
+
+prompt() 사용자에게 창을 띄움 
+
+prompt(인자, default값)  --> prompt에서 결과로 띄워주는 값은default + string
+
+prompt는 창을 띄우는동안은 js를 멈춤 --> 따라서 최근엔 prompt를 사용하지않음
+
+
+값의 타입을 보고싶으면 typeof 값
+
+parseInt()  string -> number
+
+
+2.14 isNaN -> 값이 NaN인지 아닌지 판별하는 boolean -> NaN이면 true Number면 false
+
+
+
+if (condition) {
+   condition->ture일때 뭐할지
+} else {
+   condition->false일때 뭐할지
+}
+
+
+if가 더필요하면 
+
+
+if ~else if ~ else if 사용
+
+
+if  (condition) {
+  a}   -> true일때 a실행
+
+
+if (condition) {
+ a }  else { b }   -> true일때 a /// false면 b
+
+
+if (condition) { a }
+
+if else (condition2) { b }  con false
+
+if else (condition3) { c }  con con2 false
+
+else { d }  con con2 con3 false
+
+And 연산자(operator)
+
+true && true = true
+true && false = false
+false && true = false
+
+or
+
+true || true = true
+true || false = true
+false || true = true
+false || false = false
+
+배운것 정리
