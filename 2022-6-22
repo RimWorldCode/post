@@ -1,0 +1,92 @@
+== 단순히 모양만 맞아도 true
+
+=== 문자형까지 맞아야함
+
+!==   ! = not
+
+js는 내부의 작은 괄호부터 계산해서 큰괄호로 넘어간다
+
+(c(b(a)))  a->b->c
+
+
+2.15 js 입장에서 html의 많은 부분들은 js의 객체들에 불과하다 따라서 수정 가능하다
+
+ex)  document.title = ""  --> html 제목 수정
+
+
+3.1 js는 html의 많은 object들을 가져와서 html의 자체를 보여주는게 아니라
+ 수많은 부분들을 보여준다
+
+console을 통해 하나씩 호출도 가능하고
+js에서 수정도 가능하다 --> html이 아닌 js를 통해 html의 부분들을 보고 수정할수있다
+
+3.2 js로 없는값을 불러오려고 하면 null에러창을 띄운다
+
+ getElementsByClassName() 
+ getElementsByTagName()
+-> 해당 class나 tag의 값을 array방식으로 모두 나열해줌
+  
+querySelector는 element를 css방식으로 저격호출이 가능함(하위의 element들을 저격호출가능)
+
+get은 하위의 element들을 저격호출이 불가능하므로 특정이 어려움
+-->querySelector는 한 class안에 똑같은 element가 여러개 있더라도
+element를 호출하면 맨위의 단 1개만 호출해준다
+
+querySelectorAll을 하면 동일 element를 모두 호출
+
+document.getElementById("id")으로 id를 호출하나
+document.querySelector("#id")으로 호출하나 결과는 같다
+
+
+title이라는 css요소를 호출하고나서는
+
+title.~~로 css요소내용을 바꿈
+
+
+만약 html문서의 title을 바꾸고싶으면 document.title에서 바꾸면됨
+
+3.3
+
+
+불러온요소.style.~ = "" element의 css style을 변환가능
+
+
+3.4 mdn에서 뒤에 webapi를 넣어서 js요소들을 찾아볼수있다
+
+
+console.dir()를 해서 element의 사용가능한 property들을 볼수있는데 여기서 on붙은것들이 event이고 
+on을 떼고 사용하면 된다
+
+
+3.5 
+
+nimo.onclick = handlenimoClick;
+nimo.addEventListener("click", handlenimoClick);
+
+둘은 같은 작동을 한다
+
+이렇게 on~을 사용하던지
+addEventListener안에 on을 떼고 넣어주던지
+
+단, addEventListener -> removeEventListener 를 통해 제거가 가능하다
+
+
+body나 title처럼 html문서의 공통부분을 가져올때는 document.~로 가져와야한다
+
+document.body.~
+
+함수에서 color지정시 조건식에는 color === 
+if if else 문에는 color =
+
+
+
+3.6 
+
+  nimo.style.color = newColor;  
+ equl(=)은 우변을 좌변에 대입한다
+
+
+element 찾기(querySelector) -> event listen (addEventListener) -> event에 반응 (function)
+
+
+3.7 style에 적합한건 css animation에 적합한건 js
