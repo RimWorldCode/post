@@ -1,0 +1,101 @@
+3.7 style에 적합한건 css animation에 적합한건 js
+
+그런데, html의 h1에 sexy-font라는 class name이 있었는데 js를 실행하니 교체되었다.
+최초의 class name이 사라졌고.., sexy-font라는 class name을 간직하고 싶은데 이건 어떻게 해야하는가.
+const clickedClass = "clicked sexy-font";에 추가하면 되긴 하는데 좋은 방법은 아니다. class를 추가할 때마다 js랑 css에서 업데이트를 계속 해야하니까.
+우리가 해야하는건 js로 모든 class name을 변경하지 않는거다. 이 sexy-font를 삭제하지 않고 clicked class를 변경하고 싶다는거지. 다음영상에서.
+
+3.8
+
+className 대신 ClassList를 사용하면 class하나만 가지고 있는게 아니라
+ 여러 class의 목록을 가지고 있는 element가 될수있다
+
+.classList.contains()
+.classList.remove()
+.classList.add()    --------> 이때 넣는 class는 .class (x) class (o)
+
+toggle function은 className이 있는지 없는지를 검사함
+
+
+ if (nimo.classList.contains(clickedclass)) {
+  nimo.classList.remove(clickedclass);
+} else {
+   nimo.classList.add(clickedclass);
+
+이 검사과정을
+
+ nimo.classList.toggle("clicked"); 토글은 한번에 줄여줌
+
+
+4.0 
+
+html 의 input element안의 value attribute는 input에 사용자가 입력한 값을 말한다
+
+<input value="~" /> 처럼 미리 입력해줄수도 있다
+
+
+4.1 
+
+js에서 .length 글자길이 구할수있음
+
+
+html의 form 은 input에 추가로 들어갈 내용들 max or minlength required같은 attr들을 작동 가능하게 해주고
+      submit을 html자체에서 가능하게 해준다
+
+단 form은 submit할때마다 브라우저를 새로고침함
+
+
+4.2
+
+loginForm.addEventListener("submit", onLoginFormSubmit);
+은 onLoginFormSubmit이라는 함수를 submit event 가 발생할때 브라우저를 통해서
+ argument(인자)를 가지고 실행시키고
+
+loginForm.addEventListener("submit", onLoginFormSubmit());
+이면 함수를 즉시 실행시킴
+
+js 보드에 그냥 onLoginFormSubmit() 써놓고 함수의 인자를 써넣으면
+
+그냥 함수를 실행시키는거
+
+addEventListener 의 function의 첫번째 인자는 
+항상 지금 막 발생한것에 대한 정보를 알려준다
+
+.preventDefault event의 기본행동을 막음 form에서는 새로고침 이라던지
+
+4.3 
+
+form의 기본동작이 submit이듯이 a의 기본동작은 클릭하면 다른 사이트로 가는것
+
+addEventListener안의 함수는 onLoginFormSubmit() <- 이 괄호 없이 쓰면
+브라우저에서 주는 argument를 받아서 함수를 실행시킨다
+
+이때 argument에 event(이름은 무엇이든 좋다)같은 argument를 첫번째로 넣으면 
+이 addEventListener에서 기본으로 가지고 있는 첫번째 인자가 가진 정보(방금 발생한 event)
+를 얻을수있음
+
+--> 이게 필요한 이유는 유저들이 행동을 했을때 발생 정보들이 필요할때가 있기때문
+
+
+4.4
+
+const HIDDEN_CLASSNAME = "hidden";    <-- string만 포함된 변수는 대문자로
+
+반복되는 string을 변수화 하는 이유는, 변수화 할 경우 변수를 잘못 적었을때 js에서 오류로 알려주기 때문이다
+
+greeting.innerText = "Hello " + username;  -> string을 합치는 방법1 (hello뒤에 한칸띄우기)
+greeting.innerText = `Hello ${username}`;  -> sting을 합치는 방법2 (이렇게 하면 간격 기억 안해도됨)
+
+
+"string" + 변수 + "string"
+`string ${변수} sting`  ->>>>>>>>>'' 아님 ``(백틱)임
+
+4.5 
+
+localStorage.setItem() item들을 localstorage에 저장
+localStorage.getItem()
+localStorage.removeItem()  --> ( key , value )  
+
+key는 목록 value는 값 ex) "username" , username 
+
+<- username이라는 string key와 거기에 대응하는 변수 username value   
