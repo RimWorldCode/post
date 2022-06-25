@@ -1,0 +1,125 @@
+
+5.0
+
+setinterval(원하는 동작의 function, 시간 간격//ms단위)
+
+interval 매번 일어나야 하는 무엇 ex)2초마다 일어나는 무언가
+
+setTimeout(원하는 동작의 function, 시간 간격//ms단위)
+
+timeout n초뒤에 함수를 1번 실행시킨다
+
+
+5.1 
+
+const date 객체 = new 연산자 date() 생성자함수 
+
+객체(object)는 object.property()의 형태로 사용가능
+
+
+5.2 padStart(string길이 , "앞에채울string" )    1.padStart(2, "0") 01 hello.padStart(7, "0") 00hello
+
+    padEnt(sting길이, "뒤에채울string" )        1.padEnd(2, "0") 10  hello.padEnd(7, "0") hello00
+
+
+date.get~은 number 숫자형으로 출력되고
+
+padStart padEnd는 string을 써야한다 따라서 date.get~의 값을 string으로 변환시켜야 하므로 
+
+String(date.get~ )을 사용해야한다
+
+6.0 
+
+math.random()  0~1사이의 소수를 포함한 난수 출력
+
+math.random() * 9  -> 0~9사이의 난수 출력
+
+이런식으로 뒤에 곱하기를 쓰면 해당 난수 출력가능
+
+math.round() -> 반올림
+math.ceil() -> 올림 1.1 -> 2 이런식으로
+math.floor() -> 내림
+
+정수 intergel
+소수 float
+
+
+html의 element를 js로 가져올때는 .querySelector() 를 사용했지만
+
+js에서 html에 넣을때에는 .creatElement()를 사용한다
+
+.appendChild()  괄호안을 html에 삽입
+
+ex) document.body.appendChild(~)  body 맨아래에 ~를 넣음
+ex) document.body.prependChild(~)  body 맨위에 ~를 넣음
+
+
+만약 특정장소에 넣고싶으면
+
+.insertBefore() 사용
+
+ex) document.body.insertBefore(~ , 장소)   ~를 장소 윗줄에 넣음
+
+7.0
+
+  toDoInput.value = "";  --> submit하면 입력값을 빈칸으로 다시 만들어줌
+
+7.3
+
+  JSON.stringfy는 object나 array도 string으로 바꾸어준다
+
+  sting은 JSON.parse로 다시 array나 object로 변환가능
+
+7.4 
+
+   array.forEach() 
+
+   function을 array의 각기 다른 item에 대해서 실행하게 해줌
+
+   .addEventListener가 현재 어디서 진행중인지 event를 통해 알게 해준다면 --> function(event)
+   forEach는 item을 통해 가능하게 해줌 --> function(item)
+
+
+   function 함수이름 (argument) { ~ } 
+
+   (argument) => ~   --> 동작은 같다, 후자를 화살표 함수라고 한다
+
+   화살표 함수는 함수이름이 필요없다
+
+
+7.6
+  
+ localStorage에서 특정 값을 지우고 싶다면 애초에 push하는 array값들에
+ id를 배정하고 object화 하면 된다 {id: ~ value: ~}
+
+ Data.now()  매 ms의 값을 준다 --> 이 값을 배정해 id처럼 쓸수있다
+
+7.7
+
+array에서 무언가 지울때, 실제로는 array에서 값을 지우는게 아니라
+
+그 값을 빼고 새로운 array를 만드는것이다
+
+[].filter(함수)  -> array 값들에 함수를 한번씩 적용시켜서 filtering하는것
+
+.filter는 filtering할때 true or false의 boolean값을 뱉어내는데
+
+이때 true가 나온건 array에 그대로두고 false가 나온 item들만 제외한다
+
+
+7.8
+
+array.filter(function) = array2
+
+array와 array2는 같지않다.
+
+filter는 array를 변경하는게 아니라 filter에서 걸린 요소를 뺀 array2를 새로 만들뿐
+
+8.0
+
+navigator.geolocation.getCurrentPosition(성공시함수, 에러시함수); 현재위치좌표
+
+https://openweathermap.org/ 장소 얻는 사이트
+
+
+http://api.openweathermap.org/geo/1.0/reverse?lat=37.3719693&lon=126.9383603&appid=ff2a40bdd7c4595d0d550fbc9d2086cc
