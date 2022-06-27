@@ -1,0 +1,59 @@
+
+line-height를 box height와 동일하게 해주면 box안의 text가 box수직 중간에 온다
+수평은 text-align으로 해결
+
+
+flex-wrap
+
+nowrap (default) flex박스의 item들을 한 행(row)으로 배열
+
+wrap 넘치는 item들을 여러행으로 배열
+
+wrap-reverse -> wrap인데 반대순서
+
+
+flex-flow   -> flex-direction + flex-wrap
+
+
+ex) flex-flow: row-reverse wrap;
+
+flex의 align-items의 default는 strecth --> container box크기에 맞춰서 
+
+cross axis를 기준축으로 
+
+item box크기를 미리 지정하지 않았다면 item box 크기를 위아래 늘려놓음
+
+
+align-items vs align-content 
+
+예를들어 flex-container안에 9개의 itembox가 있다고 하면
+
+align-items는 각각의 box에 따로 영향을 주지만
+
+align-content는 여러 행을 하나의 box처럼 axis-cross상에서 움직인다
+
+
+order -> flex박스의 배치순서 숫자가 높을수록 후순위
+
+flex-grow                <->   flex-shrik
+
+flex box의 넓이 증가 비율      flex box의 넓이 축소 비율
+
+flex-grow를 0으로 하면
+늘어나야 하는 상황에서도 안늘어난다!
+
+flex-basis flex box의 초기크기
+
+
+flex grow나 shrink는 설정하지 않으면 초기값은 auto
+
+
+align-self 개별 아이템에 대해서 수직정렬 방법을 정하는것
+
+align-items설정을 주어도 self설정을 한 box는 따로논다
+
+
+
+
+웹사이트 껍데기를 하나 만들고있다..
+정렬하기와 클래스 이름짓기가 너무 힘들다......
