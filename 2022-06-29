@@ -1,0 +1,172 @@
+6월29일
+
+
+jquery는 라이브러리의 양이 방대하여 웹서비스시 로딩시간이 길어지는 문제가있다
+
+그래서 요즘은 banila js로 작성하는것이 트렌드이다
+
+
+js 네이밍 룰 -> camelCase (단봉낙타) 
+
+변수 함수등 camelCase
+
+boolean 변수는 isVariable hasData areEqual 같이 is has are같은 동사를 써서 나타냄
+
+class명은 PascalCase (쌍봉낙타)
+
+
+class 내부의 method 또는 외부의 함수는 모두 camelCase
+
+
+함수/method는 getName과 같이 동사로 시작하면 좋다
+
+
+js도 여러줄 주석은 /**/를 쓰면된다
+
+
+js는 될거같은 문법이 안된다던가 안될거같은 문법이 되는경우도 많다, 
+
+따라서 융통성을 가지고 코드를 변경해보며 실행하는것이 좋다
+
+let은 재선언은 안되지만 재할당은 가능하다
+const는 재선언 재할당 안된다
+
+var는 재선언 재할당이 모두 가능하다(이제는 잘 쓰지 않음)
+
+
+2. 데이터 타입 
+
+
+Number 정수+부동소숫점
+
+
+boolean()  -> true or false 를 뱉어냄
+
+"" undefined null 0 --> false
+
+
+null -> 값이 없음    -->null의 data type은 object
+
+undefined -> 값이 할당되지 않음   -->undefined의 data type은 undefined
+
+
+symbol ([description])  -> symbol으로 만들어진 변수는 유니크한 값을 가지므로 동일한
+값을 넣더라도 겹치지 않는다
+
+description에 넣는 값은 인자로써 기능보다는 symbol에 대한 설명정도이다
+
+Symbol(1) === Symbol(1)  -> false
+
+
+3. 데이터 타입 변환
+
+Number() Number 타입으로 변환
+parseInt() -> Number 타입으로 변환 소수를 정수로
+parseFloat() -> Number 타입으로 변환 부동소숫점까지 표시
+
+String() -> String 타입으로 변환
+
+Boolean() -> Boolean 타입으로 변환 -> true false 로 변환한다
+
+
+4. 연산자
+
+== !=동등 연산자  -> 값만 같은지     1 == "1"  true
+
+=== !==일치 연산자 -> 값과 데이터 타입까지 같은지  1 === "1" false
+
+
+value++  -> 값을 꺼내고 1더함
+
+++value  -> 1 더하고 값 꺼냄
+
+
+= 대입연산자  A = B 
+
+B값을 A에 대입 우에서 좌로 대입
+
+
+value += 1   value에 1더한 값을 value값으로    value += 1  // value = value + 1
+value -= 1   value에 1 뺀값을 value값으로
+value *= 5   value에 5 곱한 값을 value 값으로
+value /= 5   value에 5 나눈 값을 value 값으로
+
+
+
+논리 연산자 
+
+
+! NOT
+&& AND   true && true === true  true && false === false  하나라도 true가 아니어도 false
+|| OR    true && false === true  하나만 true 여도 true
+
+
+
+문자열 연산
+
+String1 + String2 = String1String2
+
+hello + world = helloworld
+
+
+
+5. 조건문
+
+
+if (조건) {                  if (조건) { 
+   코드;                        코드;
+}                             }  else if
+                                {  코드; 
+                              }
+                                 else if
+                                {  코드; 
+                              }
+                                 else
+                                {  코드; 
+                              }
+
+
+6. switch/case
+
+switch (조건) {
+   case 변수:
+     코드;
+  break;
+   case 변수:
+     코드;
+  break;	
+  default:
+     코드;
+}
+
+중간에 break를 넣지 않으면
+조건이 맞지 않아도 끝 케이스까지 다 출력해버림
+
+
+7 함수
+
+
+function 함수이름(함수인자) {
+
+함수실행코드
+
+}   --> 함수 인자는 있을수도 없을수도 있음
+
+
+8 화살표 함수
+
+let func = (함수인자) => 리턴값  /  {리턴값}
+
+let func = function(함수인자) { return 리턴값; } 
+
+-> 둘이 같은것// 화살표 함수는 함수 이름이 없는 익명함수 
+
+따라서 let과 같은 변수선언키워드에 따라오는 변수에 대입하여 쓰는 경우가 많다
+
+함수 인자가 하나라면 인자괄호()도 생략가능 코드가 한줄이면 코드블록기호 {} 생략가능
+
+let func = (함수인자) => {리턴값} ----->  let func = 함수인자 => 리턴값
+
+let func = ( a , b ) => { return a * b }  --> let func = (a , b) => a * b
+
+let func = ( a ) => { return a + 1 }  --> let func =  a  => a + 1
